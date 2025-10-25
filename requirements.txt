@@ -1,0 +1,17 @@
+langchain
+langchain-community
+langchain-classic
+langchain-groq
+langchain-ollama
+langchain-huggingface
+python-dotenv
+sentence-transformers
+pypdf
+beautifulsoup4
+lxml
+hf_xet
+sse-starlette
+
+langchain-astradb
+
+streamlit

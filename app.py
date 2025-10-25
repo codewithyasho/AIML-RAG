@@ -10,16 +10,16 @@ from src.data_loaders import load_text_files, load_pdf_files, load_web_data, chu
 from config.settings import *
 
 # Load documents and create vector store if not exists
-# if 'vectorstore' not in st.session_state:
-#     with st.spinner("🚀 Loading data and creating vector store..."):
-#         text_docs = load_text_files(TEXT_DATA_PATH)
-#         pdf_docs = load_pdf_files(PDF_DATA_PATH)
-#         web_docs = load_web_data(WEB_URLS)
-#         all_docs = text_docs + pdf_docs + web_docs
-#         chunks = chunk_documents(all_docs)
-#         embeddings = get_huggingface_embeddings()
-#         st.session_state.vectorstore = create_vector_store(chunks, embeddings)
-#         st.success("✅ Data loaded and vector store created!")
+if 'vectorstore' not in st.session_state:
+    with st.spinner("🚀 Loading data and creating vector store..."):
+        text_docs = load_text_files(TEXT_DATA_PATH)
+        pdf_docs = load_pdf_files(PDF_DATA_PATH)
+        web_docs = load_web_data(WEB_URLS)
+        all_docs = text_docs + pdf_docs + web_docs
+        chunks = chunk_documents(all_docs)
+        embeddings = get_huggingface_embeddings()
+        st.session_state.vectorstore = create_vector_store(chunks, embeddings)
+        st.success("✅ Data loaded and vector store created!")
 
 # Suppress warnings
 suppress_warnings()
